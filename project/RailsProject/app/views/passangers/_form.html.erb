@@ -10,28 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
+  <div style="margin-top : 20px;">
+    <%= form.label :first_name, style: "display: block;" %>
     <%= form.text_field :first_name %>
   </div>
 
-  <div>
+  <div style="margin-top : 20px;">
     <%= form.label :last_name, style: "display: block" %>
     <%= form.text_field :last_name %>
   </div>
 
-  <div>
+  <div style="margin-top : 20px;">
     <%= form.label :items_count, style: "display: block" %>
     <%= form.number_field :items_count %>
   </div>
 
-  <div>
+  <div style="margin-top : 20px;">
     <%= form.label :items_weight, style: "display: block" %>
     <%= form.text_field :items_weight %>
   </div>
 
-  <div>
+  <div style="margin-top : 20px;">
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="container">
 <h2>Passangers</h2>
 
 <table class='table'>
@@ -30,11 +30,9 @@
           <%= passanger.items_weight %>
         </th>
         <th>
-          <%= link_to "Show this passanger", passanger %>
-          <br/>
-          <%= link_to "Edit this passanger", edit_passanger_path(passanger) %>
-          <br/>
-          <%= link_to "Destroy this passanger", passanger, method: :delete %>
+          <%= link_to "Show this passanger", passanger , class: "btn btn-secondary"%>
+          <%= link_to "Edit this passanger", edit_passanger_path(passanger), class: "btn btn-secondary" %>
+          <%= link_to "Destroy this passanger", passanger, method: :delete, class: "btn btn-secondary" %>
         </th>
       </tr>
       <% end %>
@@ -43,4 +41,5 @@
 </table>
 
 
-<%= button_to "Add passanger", new_passanger_path %>
+<%= link_to "Add passanger", new_passanger_path, class: "btn btn-secondary" %>
+</div>
