@@ -1,14 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Passangers</h1>
+<h2>Passangers</h2>
 
-<div id="passangers">
-  <% @passangers.each do |passanger| %>
-    <%= render passanger %>
-    <p>
-      <%= link_to "Show this passanger", passanger %>
-    </p>
-  <% end %>
-</div>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Items Count</th>
+      <th>Items Weight</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="passangers">
+      <% @passangers.each do |passanger| %>
+      <%= render passanger %>
+      <tr id="<%= dom_id passanger %>">
+        <th>
+          <%= passanger.first_name %>
+        </th>
+        <th>
+          <%= passanger.last_name %>
+        </th>
+        <th>
+          <%= passanger.items_count %>
+        </th>
+        <th>
+          <%= passanger.items_weight %>
+        </th>
+        <th>
+          <%= link_to "Show this passanger", passanger %>
+          <br/>
+          <%= link_to "Edit this passanger", edit_passanger_path(passanger) %>
+          <br/>
+          <%= link_to "Destroy this passanger", passanger, method: :delete %>
+        </th>
+      </tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
 
-<%= link_to "New passanger", new_passanger_path %>
+
+<%= button_to "Add passanger", new_passanger_path %>
