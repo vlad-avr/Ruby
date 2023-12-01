@@ -4200,3 +4200,189 @@ Processing by PassangersController#new as HTML
 Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 6453)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-01 13:25:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 360)
+  Rendered home/_header.html.erb (Duration: 24.5ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 774.1ms | Allocations: 38069)
+Completed 200 OK in 1009ms (Views: 817.8ms | ActiveRecord: 0.0ms | Allocations: 42629)
+
+
+Started GET "/passangers" for 127.0.0.1 at 2023-12-01 13:25:49 +0200
+Processing by PassangersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/index.html.erb within layouts/application
+  [1m[36mPassanger Load (23.9ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers"[0m
+  ↳ app/views/passangers/index.html.erb:17
+  Rendered passangers/_passanger.html.erb (Duration: 24.5ms | Allocations: 135)
+  Rendered passangers/_passanger.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered passangers/index.html.erb within layouts/application (Duration: 222.4ms | Allocations: 7975)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 232.9ms | Allocations: 10670)
+Completed 200 OK in 284ms (Views: 212.1ms | ActiveRecord: 24.8ms | Allocations: 12326)
+
+
+Started GET "/passangers/3" for 127.0.0.1 at 2023-12-01 13:25:53 +0200
+Processing by PassangersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPassanger Load (0.8ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/show.html.erb within layouts/application
+  Rendered passangers/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 947)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 3524)
+Completed 200 OK in 141ms (Views: 23.4ms | ActiveRecord: 0.8ms | Allocations: 11719)
+
+
+Started GET "/passangers/3/edit" for 127.0.0.1 at 2023-12-01 13:25:55 +0200
+Processing by PassangersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPassanger Load (0.1ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/edit.html.erb within layouts/application
+  Rendered passangers/_form.html.erb (Duration: 146.3ms | Allocations: 3361)
+  Rendered passangers/edit.html.erb within layouts/application (Duration: 157.1ms | Allocations: 3678)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 165.2ms | Allocations: 6265)
+Completed 200 OK in 170ms (Views: 166.1ms | ActiveRecord: 0.1ms | Allocations: 7116)
+
+
+Started PATCH "/passangers/3" for 127.0.0.1 at 2023-12-01 13:25:59 +0200
+Processing by PassangersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "passanger"=>{"first_name"=>"John", "last_name"=>"Bio", "items_count"=>"433", "items_weight"=>"10.0"}, "commit"=>"Update Passanger", "id"=>"3"}
+  [1m[36mPassanger Load (0.1ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/passangers_controller.rb:40:in `block in update'
+  [1m[36mPassanger Update (3.0ms)[0m  [1m[33mUPDATE "passangers" SET "last_name" = ?, "updated_at" = ? WHERE "passangers"."id" = ?[0m  [["last_name", "Bio"], ["updated_at", "2023-12-01 11:25:59.229788"], ["id", 3]]
+  ↳ app/controllers/passangers_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (87.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/passangers_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/passangers/3
+Completed 302 Found in 106ms (ActiveRecord: 90.3ms | Allocations: 4428)
+
+
+Started GET "/passangers/3" for 127.0.0.1 at 2023-12-01 13:25:59 +0200
+Processing by PassangersController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPassanger Load (0.2ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/show.html.erb within layouts/application
+  Rendered passangers/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 581)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3197)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 4026)
+
+
+Started GET "/passangers" for 127.0.0.1 at 2023-12-01 13:26:01 +0200
+Processing by PassangersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/index.html.erb within layouts/application
+  [1m[36mPassanger Load (0.2ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers"[0m
+  ↳ app/views/passangers/index.html.erb:17
+  Rendered passangers/_passanger.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered passangers/_passanger.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered passangers/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1291)
+  Rendered home/_header.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 3755)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 4056)
+
+
+Started GET "/passangers/4" for 127.0.0.1 at 2023-12-01 13:26:04 +0200
+Processing by PassangersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPassanger Load (0.2ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/show.html.erb within layouts/application
+  Rendered passangers/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 502)
+  Rendered home/_header.html.erb (Duration: 0.1ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2957)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 3710)
+
+
+Started DELETE "/passangers/4" for 127.0.0.1 at 2023-12-01 13:26:08 +0200
+Processing by PassangersController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mPassanger Load (0.1ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/passangers_controller.rb:52:in `destroy'
+  [1m[36mPassanger Destroy (2.1ms)[0m  [1m[31mDELETE FROM "passangers" WHERE "passangers"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/passangers_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (66.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/passangers_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/passangers
+Completed 302 Found in 79ms (ActiveRecord: 68.9ms | Allocations: 2411)
+
+
+Started GET "/passangers" for 127.0.0.1 at 2023-12-01 13:26:08 +0200
+Processing by PassangersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/index.html.erb within layouts/application
+  [1m[36mPassanger Load (0.1ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers"[0m
+  ↳ app/views/passangers/index.html.erb:17
+  Rendered passangers/_passanger.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered passangers/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1040)
+  Rendered home/_header.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3502)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 3795)
+
+
+Started GET "/passangers/new" for 127.0.0.1 at 2023-12-01 13:26:12 +0200
+Processing by PassangersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/new.html.erb within layouts/application
+  Rendered passangers/_form.html.erb (Duration: 3.2ms | Allocations: 1485)
+  Rendered passangers/new.html.erb within layouts/application (Duration: 27.2ms | Allocations: 1758)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 4235)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 4634)
+
+
+Started POST "/passangers" for 127.0.0.1 at 2023-12-01 13:26:22 +0200
+Processing by PassangersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "passanger"=>{"first_name"=>"P", "last_name"=>"P", "items_count"=>"212", "items_weight"=>"2.223"}, "commit"=>"Create Passanger"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/passangers_controller.rb:27:in `block in create'
+  [1m[36mPassanger Create (1.4ms)[0m  [1m[32mINSERT INTO "passangers" ("first_name", "last_name", "items_count", "items_weight", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "P"], ["last_name", "P"], ["items_count", 212], ["items_weight", 2.223], ["created_at", "2023-12-01 11:26:22.180122"], ["updated_at", "2023-12-01 11:26:22.180122"]]
+  ↳ app/controllers/passangers_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (82.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/passangers_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/passangers/5
+Completed 302 Found in 94ms (ActiveRecord: 83.5ms | Allocations: 2390)
+
+
+Started GET "/passangers/5" for 127.0.0.1 at 2023-12-01 13:26:22 +0200
+Processing by PassangersController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mPassanger Load (0.3ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers" WHERE "passangers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/passangers_controller.rb:63:in `set_passanger'
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/show.html.erb within layouts/application
+  Rendered passangers/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+  Rendered home/_header.html.erb (Duration: 0.1ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2976)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 3729)
+
+
+Started GET "/passangers" for 127.0.0.1 at 2023-12-01 13:26:24 +0200
+Processing by PassangersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passangers/index.html.erb within layouts/application
+  [1m[36mPassanger Load (0.2ms)[0m  [1m[34mSELECT "passangers".* FROM "passangers"[0m
+  ↳ app/views/passangers/index.html.erb:17
+  Rendered passangers/_passanger.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered passangers/_passanger.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered passangers/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1254)
+  Rendered home/_header.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3716)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 4008)
+
+
