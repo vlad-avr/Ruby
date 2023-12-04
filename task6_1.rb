@@ -113,8 +113,8 @@ def task5(passangers)
   end
 end
 
-task1(passangers, avg_weight)
-task2(passangers, avg_items)
-task3(passangers)
-task4(passangers)
-task5(passangers)
+# task1(passangers, avg_weight)
+# task2(passangers, avg_items)
+# task3(passangers)
+# task4(passangers)
+# task5(passangers)
